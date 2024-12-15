@@ -15,7 +15,7 @@ const ViewTaskModal = ({ showViewModal, handleViewModalClose, id }) => {
           setTask(res.data.task);
         })
         .catch((error) => {
-          console.log(error.response.data.message);
+          
         });
     };
     if (id) {

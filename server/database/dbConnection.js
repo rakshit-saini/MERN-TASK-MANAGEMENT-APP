@@ -6,9 +6,9 @@ export const dbConnection = () => {
       dbName: "MERN_STACK_TASK_MANAGEMENT",
     }) 
     .then(() => {
-      console.log("Connected to database!");
+        console.log("connected to db")
     })
     .catch((err) => {
-      console.log(`Some error occured while connecting to database! : ${err}`);
+     console.log(err)
     });
 };

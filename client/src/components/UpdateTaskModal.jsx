@@ -27,7 +27,7 @@ const UpdateTaskModal = ({
           setArchived(res.data.task.archived);
         })
         .catch((error) => {
-          console.log(error.response.data.message);
+         
         });
     };
     if (id) {

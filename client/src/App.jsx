@@ -23,7 +23,7 @@ const App = () => {
         setIsAuthenticated(true);
         setUser(data.user);
       } catch (error) {
-        console.log("USER IS NOT AUTHENTICATED!");
+        
         setIsAuthenticated(false);
         setUser({});
       }

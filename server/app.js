@@ -7,9 +7,11 @@ import fileUpload from "express-fileupload";
 import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./routes/userRouter.js";
 import taskRouter from "./routes/taskRouter.js";
-
+import path from "path";
 const app = express();
 dotenv.config({ path: "./config/config.env" });
+
+const _dirname = path.resolve()
 
 app.use(
   cors({
@@ -33,6 +35,10 @@ app.use(
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/task", taskRouter);
 
+app.use(express.static(path.join(_dirname, "/client/dist")))
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"))
+})
 dbConnection();
 
 app.use(errorMiddleware);
