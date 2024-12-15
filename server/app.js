@@ -15,7 +15,7 @@ const _dirname = path.resolve()
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: "https://mern-task-management-app-4l18.onrender.com",
     methods: ["GET", "PUT", "DELETE", "POST"],
     credentials: true,
   })
